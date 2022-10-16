@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Homepage for Alpha Airlines</title>
+    <title>Alpha Airlines</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
@@ -99,9 +99,9 @@
             <img src="../Images/close.png" id="close" class="close1" alt="close" /><br>
             <form action="Login/login-process.php" method="POST">
                 Username:<span class="error">* <?php echo $userErr; ?></span><br>
-                <input type="text" placeholder="username" class="box" name="username" />
+                <input type="text" placeholder="username" class="box" name="username" required/>
                 Password:<span class="error">* <?php echo $passErr; ?></span><br>
-                <input type="password" placeholder="password" class="box" name="password" /><br>
+                <input type="password" placeholder="password" class="box" name="password" required/><br>
                 <input type="submit" name="login" class="box" id="submit1" value="Login" />
             </form>
         </div>

@@ -5,19 +5,23 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+
+  background-image: url("../../Images/img7.jpg");
+  background-size: cover;
 }
 body{
   display: flex;
   padding: 0 10px;
   min-height: 100vh;
-  /* background-image: url("../../Images/img2.jpg"); */
-  background: #27ae60;
+  /* background: #0D6EFD; */
+  
+
   align-items: center;
   justify-content: center;
 }
 ::selection{
   color: #fff;
-  background: #27ae60;
+  background: #0D6EFD;
 }
 .wrapper{
   width: 715px;

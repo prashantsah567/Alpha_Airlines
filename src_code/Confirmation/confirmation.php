@@ -8,7 +8,7 @@ $id = $_GET["Application_No"];
 <html lang="en">
 
 <head>
-    <title>Reservation details</title>
+    <title>Alpha Airlines</title>
     <link rel="stylesheet" href="confirmation.css">
 </head>
 

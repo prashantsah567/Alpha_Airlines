@@ -11,7 +11,7 @@
       $subject = "From: $name <$email>";
       $body = "Name: $name\nEmail: $email\nPhone: $phone\nWebsite: $website\n\nMessage:\n$message\n\nRegards,\n$name";
       $sender = "From: $email";
-      if(mail($receiver, $subject, $body, $sender)){ //mail() is a inbuild function to send mail
+      if(mail($receiver, $subject, $body, $sender)){
          echo "Your message has been sent";
       }else{
          echo "Sorry, failed to send your message!";

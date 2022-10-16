@@ -1,9 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact to Alpha</title>
+  <title>Alpha Airlines</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>Get In Touch</header>
+    <form onsubmit="sendEmail(); reset(); return false;" autocomplete="off">
+      <div class="dbl-field">
+        <div class="field">
+          <input type="text" name="name" id="name" placeholder="Enter your name">
+          <i class='fas fa-user'></i>
+        </div>
+        <div class="field">
+          <input type="text" name="email" id="email" placeholder="Enter your email">
+          <i class='fas fa-envelope'></i>
+        </div>
+      </div>
+      <div class="dbl-field">
+        <div class="field">
+          <input type="text" name="phone" id="phone" placeholder="Enter your phone">
+          <i class='fas fa-phone-alt'></i>
+        </div>
+        <div class="field">
+          <input type="text" name="subject" id="subject" placeholder="Enter the subject">
+          <i class='fas fa-book'></i>
+        </div>
+      </div>
+      <div class="message">
+        <textarea placeholder="Write your message" id="message" name="message"></textarea>
+        <i class="material-icons">message</i>
+      </div>
+      <div class="button-area">
+        <button type="submit">Send Message</button><br>
+        <button type="reset" id="back" onclick="location.href='../index.html'">Go Back</button>
+        <span></span>
+      </div>
+    </form>
+  </div>
+
+  <script src="contact.js"></script>
+
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Airlines</title>
   <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -11,7 +65,7 @@
 <body>
   <div class="wrapper">
     <header>Send us a Message</header>
-    <form action="#">
+    <form action="#" method="POST">
       <div class="dbl-field">
         <div class="field">
           <input type="text" name="name" placeholder="Enter your name">
@@ -28,7 +82,7 @@
           <i class='fas fa-phone-alt'></i>
         </div>
         <div class="field">
-          <input type="text" name="website" placeholder="Enter the subject">
+          <input type="text" name="Subject" placeholder="Enter the subject">
           <i class='fas fa-book'></i>
         </div>
       </div>
@@ -37,7 +91,7 @@
         <i class="material-icons">message</i>
       </div>
       <div class="button-area">
-        <button type="submit">Send Message</button><br>
+        <button type="submit">Send Message</button>
         <button type="reset" id="back" onclick="location.href='../index.html'">Go Back</button>
         <span></span>
       </div>
@@ -45,6 +99,6 @@
   </div>
 
   <script src="contact.js"></script>
- 
+
 </body>
-</html>
+</html> -->

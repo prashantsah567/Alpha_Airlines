@@ -33,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "select * from FINALBOOKING ORDER BY Application_No DESC LIMIT 1";
             $result = mysqli_query($connect, $sql);
 
-            if($result->num_rows > 0){
+            if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                header("Location: ../Payment/payment.php?id=".$row["Application_No"]);
+                header("Location: ../Payment/payment.php?id=" . $row["Application_No"]);
             }
         } else {
             echo "Error inserting booking value into sql table: " . mysqli_error($connect);
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Airline Booking Form</title>
+    <title>Alpha Airlines</title>
     <link rel="stylesheet" href="booking.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -66,6 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <!-- for calender view -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+    <!-- including the js file -->
+    <script src="booking.js"></script>
+
 </head>
 
 <body>
@@ -74,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <form class="form-group" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <!--form-->
-            <h1 class="text-center">Airline Booking Form</h1>
+            <h1 class="text-center">Alpha Booking Form</h1>
 
             <div id="form">
                 <!--form-->
@@ -82,13 +90,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div id="input">
                     <!--input-->
-                    <input type="text" id="input-group" placeholder="From" name="from">
-                    <input type="text" id="input-group" placeholder="To" name="to">
-                    <input type="text" id="input-group" placeholder="Departure Date" name="departureDate">
-                    <input type="text" id="input-group" placeholder="Departure Time" name="departureTime">
+                    <input type="text" id="input-group" placeholder="From" name="from" required>
+                    <input type="text" id="input-group" placeholder="To" name="to" required>
+                    <span id="input-group" class="text-primary">Departure Date:</span> <input type="text" id="start_datepicker" placeholder="Departure Date" name="departureDate">
+                    <!-- <span id="input-group" class="text-primary">Departure Time:</span><input type="time" id="input-group" placeholder="Departure Time" name="departureTime"> -->
                     <select id="input-group" style="background: black;">
                         <option value="">Airline</option>
-                        <option value="">Alpha</option>
+                        <option value="">Alpha-001</option>
                     </select>
                     <select id="input-group" style="background: black;" name="seat">
                         <option value="">Preffered Seating</option>
@@ -109,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div id="input3">
                     <!--input3-->
-                    <span id="input-group" class="text-primary">Select Your Fare</span>
+                    <span id="input-group" class="text-primary">Select Your Trip</span>
                     <input type="radio" id="input-group" name="r">
                     <label class="text-white" for="input-group">One Way</label>
                     <input type="radio" id="input-group" name="r">
@@ -119,8 +127,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div id="input4">
                     <!--input4-->
-                    <input type="text" id="input-group" placeholder="Return Date" name="returnDate">
-                    <input type="text" id="input-group" placeholder="Return time" name="retrunTime">
+                    <span id="input-group" class="text-primary">Return Date:</span><input type="text" id="end_datepicker" placeholder="Return Date" name="returnDate">
+                    <!-- <span id="input-group" class="text-primary">Return Time:</span><input type="time" id="input-group" placeholder="Return time" name="retrunTime"> -->
                     <input type="text" id="input-group1" placeholder="Any Message" name="message">
                 </div>
                 <!--input4-->
